@@ -1,5 +1,6 @@
 import {useCubeStore} from "../../store/useCubeStore.ts";
 import {NOTATION_MAP} from "../../core/constants.ts";
+import {CubeSolver} from "../../core/solver.ts";
 
 function Controls() {
   const rotateSide = useCubeStore((state) => state.rotateSide);
@@ -17,6 +18,13 @@ function Controls() {
       <button onClick={() => handleMove('D')}>U (Низ)</button>
       <button onClick={() => handleMove('L')}>R (Лево)</button>
       <button onClick={() => handleMove('B')}>F (Назад)</button>
+        <button onClick={() => CubeSolver.playAlgorithm("R U R' U' R U R' U'")}>
+          Запустить "Пиф-Паф"
+        </button>
+
+        <button onClick={() => CubeSolver.solveCurrentState()}>
+          Собрать куб
+        </button>
     </div>
   );
 }

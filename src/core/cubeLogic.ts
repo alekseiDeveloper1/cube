@@ -1,9 +1,8 @@
-import type {CubeState, Vector3Array} from "../core/type.ts";
+import type {Axis, CubeState, Direction, Vector3Array} from "./type.ts";
 import * as THREE from 'three';
 import {COLORS, SIDE_INDEX} from "./constants.ts";
 
-type Axis = 'x' | 'y' | 'z';
-type Direction = 1 | -1;
+
 export const rotateCube = (
   cube: CubeState,
   axis: Axis,

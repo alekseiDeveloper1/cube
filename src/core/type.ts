@@ -2,6 +2,9 @@ import * as THREE from 'three';
 
 export type Vector3Array = [number, number, number];
 
+export type Axis = 'x' | 'y' | 'z';
+export type Direction = 1 | -1;
+
 export interface CubeState {
   id: number;
   initialPosition: Vector3Array;
@@ -12,7 +15,6 @@ export interface CubeState {
 export interface CubeStore {
   cubes: CubeState[];
   isAnimating: boolean;
-  rotateSide: (axis: 'x' | 'y' | 'z', layer: number, dir: 1 | -1) => void;
+  rotateSide: (axis: Axis, layer: number, dir: Direction) => void;
   reset: () => void;
 }
-
